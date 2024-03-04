@@ -1,8 +1,6 @@
 # sass-architecture
 
-Sure, here's your README formatted with markdown:
 
-```markdown
 # How to use Sass 7-1 Architecture for Code Organization in your Project
 
 ## Summary
@@ -35,7 +33,7 @@ By now, your `package.json` should have already been showing in your explorer. C
     "author": "",
     "license": "ISC"
 }
-```
+
 
 ### Step 4:
 Still in your terminal, install the dependencies with the following:
