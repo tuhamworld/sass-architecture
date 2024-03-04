@@ -33,14 +33,37 @@ By now, your `package.json` should have already been showing in your explorer. C
     "author": "",
     "license": "ISC"
 }
-
+```
 
 ### Step 4:
 Still in your terminal, install the dependencies with the following:
 ```bash
 npm i node-sass concat autoprefixer npm-run-all postcss postcss-cli
 ```
-Once the installation is done, check to see that your `package.json` has been updated to include the dependencies.
+Once the installation is done, check to see that your `package.json` has been updated to include the dependencies as shown below.
+
+```json
+{
+    "name": "recent-work", 
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+    "autoprefixer": "^10.4.15",
+    "concat": "^1.0.3",
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.29",
+    "postcss-cli": "^10.1.0"
+   }
+  }
+```
+
 
 ### Step 5:
 The next step is to create some files/folders:
@@ -55,7 +78,39 @@ Create a folder (`CSS`) and create 5 CSS files in it named (`main.css`, `additio
 Link your `main.css` file as the stylesheet link in your `index.html`.
 
 ### Step 6:
-Back to your `package.json` file, customize the "scripts" by stating the path to find your "SCSS and CSS files" which we just created.
+Back to your `package.json` file, customize the "scripts" by stating the path to find your "SCSS and CSS files" which we just created. The script should look similar to this:
+
+
+```json
+{
+    "name": "recent-work", 
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "watch-sass": "node-sass scss/main.scss css/main.css --watch",
+      "compile-sass": "node-sass scss/main.scss css/style.comp.css",
+      "concat-css": "concat -o css/style.concat.css css/additional.css dist/style.comp.css",
+      "prefix-css": "postcss --use autoprefixer -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css",
+      "compress-css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+      "build-css": "npm-run-all compile-sass concat-css prefix-css compress-css"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+    "autoprefixer": "^10.4.15",
+    "concat": "^1.0.3",
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.29",
+    "postcss-cli": "^10.1.0"
+   }
+  }
+```
+
+NOTE: The pathing in each line was added according to how the SCSS and CSS Folders/files were named, so always work with what you name your folders/files.
+
 
 ### Intermission:
 If you have come this far WITHOUT encountering any errors, well done. 🎉
