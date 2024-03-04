@@ -6,7 +6,7 @@
 ## Summary
 Code organization within a software project makes it more manageable, readable, and maintainable. This GitHub repository provides the list of folders and subfiles you need to set up your Sass 7-1 architecture. In the subsequent part of this README, you'll find a guide on how to set up and compile Sass 7-1 architecture in your project.
 
-If you prefer to watch a video demonstration instead, check out [How to setup, and compile Sass 7-1 architecture to CSS in React](https://www.youtube.com/watch?v=a8siiSwEC2w).
+If you prefer to watch a video demonstration instead, check out [How to setup, and compile Sass 7-1 architecture to CSS in React](https://www.youtube.com/watch?v=VNiy8DfXCN4).
 
 ## Step by Step Guide
 
